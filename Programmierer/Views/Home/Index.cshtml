@@ -1,0 +1,42 @@
+﻿@model Programmer
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Vorname)
+    <br />
+    @Html.TextBoxFor(m => m.Vorname)
+    <br />
+    @Html.LabelFor(m => m.Nachname)
+    <br />
+    @Html.TextBoxFor(m => m.Nachname)
+    <br />
+    @Html.LabelFor(m => m.Email)
+    <br />
+    @Html.TextBoxFor(m => m.Email)
+    <br />
+    @Html.LabelFor(m => m.Geschlecht)
+    <div>
+        @Html.RadioButtonFor(m => m.Geschlecht, "männlich") Männlich
+        @Html.RadioButtonFor(m => m.Geschlecht, "weiblich") Weiblich
+    </div>
+    <br />
+    @Html.LabelFor(m => m.Aufgaben)
+    <br />
+    @Html.DropDownList("Aufgaben")
+    <br />
+    @Html.LabelFor(m => m.Projekte)
+    <br />
+    @Html.ListBox("Projekte")
+    <br />
+    <input type="submit" value="Submit" />
+}
+
